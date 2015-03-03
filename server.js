@@ -1,7 +1,7 @@
 var  express = require('express');
 var  app = express();
 var  mongojs = require('mongojs');
-var  db = mongojs('contactlist',['contactlist']);
+var  db = mongojs('mongodb://Vivek5041:TIMESof@ds029950.mongolab.com:29950/contactlist',['contactlist']);
 var  bodyparser = require('body-parser');
 
 
@@ -97,5 +97,5 @@ app.put('/contactlist/:id', function (req, res) {
 	});
 });
 
-app.listen(5000);
-console.log("server running on 3000");
+app.listen(process.env.PORT || 5000);
+console.log("server running on 5000");
